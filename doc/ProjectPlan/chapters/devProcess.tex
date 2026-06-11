@@ -1,0 +1,19 @@
+\chapter{Development Process}
+
+The development team shall use a tailored V-Model as their development process model. The V-Model shall be subdivided into 4 horizontal layers:
+
+\begin{enumerate}
+    \item User Layer
+    \item High Level Layer
+    \item Low Level Layer
+    \item Implementation Layer
+\end{enumerate}
+
+The User Layer shall represent the SeeSat e.V. This instance is the final user of the product, this layer defines the use cases and acceptance tests. The High Level Layer shall represent system requirements and system tests. The Low Level Layer shall define unit tests and requirements that can be directly mapped to the Implementation Layer.
+In addition to the classical V-Model an iterative approach is used in the lower two layers of the V-Model, to allow for an iterative development. This means that each subsystem of the project may be advanced at its own respective pace and if a logical mistake is noted in the development or testing of a specific module one may change the respective low level requirements. A main target of this iterative approach is to develop working prototypes to make sure that the final product is in a working and  \glqq deliverable\grqq~state after every sprint.
+
+Git shall be used for versioning and work distribution. The team may also use GitLab's CI/CD pipeline for automatic testing and generating artifacts from source, e.g. build files or documents from \LaTeX. For proper usage of Git a standard has been defined by the development team that can be found in \href{https://nc.seesat.eu/apps/files/files/220350?dir=/Project/ERWIN/Engineering/TMTC/CCSDS-Stack/2.%20Iteration%20%28TSL23%29/WPD-TSL-0004%20%28TM%20Chain%29/Documents/Standardization/GitStandardizationAndWorkflow&editing=false&openfile=true}{SeeSat-TMTC-104: Git Standardization and Workflow}.
+If the Customer is able to provide a Valispace environment the development team should use Valispace as a requirements management Tool. At the time of writing there is no such environment (see. Risk Management \ref{chp:Risk_Management})
+If the development team draws diagrams these diagrams shall be drawn in the free online tool draw.io or in the textual UML tool PlantUML.
+
+A detailed process definition of the Development Process used in this project can be found in \href{https://nc.seesat.eu/apps/files/favorites/220327?dir=/Project/ERWIN/Engineering/TMTC/CCSDS-Stack/2.%20Iteration%20%28TSL23%29/WPD-TSL-0004%20%28TM%20Chain%29/Documents/Standardization/DevelopmentProcess&editing=false&openfile=true}{SeeSat-TMTC-103: Development Process}.
