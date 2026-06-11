@@ -1,0 +1,8 @@
+----------------------------------------------------------------
+--  File: <FileName>.vhd
+--  Created: <Date>
+--  Author: <Author>
+--  Project Name: <Project Name>
+--  Description: <Short description>
+--  License: https://github.com/rtbnb/CCSDS-TM/blob/master/LICENSE
+----------------------------------------------------------------

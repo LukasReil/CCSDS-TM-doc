@@ -1,0 +1,22 @@
+# latex generated files
+**/*.aux
+**/*.acn
+**/*.bcf
+**/*.glo
+**/*.idx
+**/*.ilg
+**/*.ind
+**/*.ist
+**/*.lof
+**/*.log
+**/*.lot
+**/*.nlo
+**/*.out
+**/*.run.xml
+**/*.synctex.gz
+**/*.toc
+**/*.glsdefs
+**/*.nlg
+**/*.nls
+**/*.bbl
+**/*.blg

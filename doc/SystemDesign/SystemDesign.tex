@@ -1,0 +1,123 @@
+% File Header 
+
+\documentclass[%
+fontsize=12pt,					% Schriftgröße
+paper=a4,						% Papierformat
+twoside=false
+]{scrbook}	
+
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage[linewidth=1pt]{mdframed}
+\usepackage{ragged2e}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage[hidelinks]{hyperref} % Erlaubt klickbare Referenzen im Dokument, z.B. automatisch im Inhaltsverzeichnis oder mit \ref
+
+% ------- Konfiguration für Code Snippets im Dokument -------
+\usepackage{listings}
+
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolor},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{blue},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+% ------- Konfiguration für Code Snippets im Dokument -------
+
+
+\RedeclareSectionCommand[
+style=section,
+indent=0pt
+]{chapter}
+
+%% customization for title description 
+\setkomafont{disposition}{\normalfont\bfseries\normalsize}% \normalfont usually
+\setkomafont{chapter}{\normalfont\bfseries\Huge}% Don't overwrite the font setting (i.e. size) of disposition.
+\setkomafont{section}{\normalfont\bfseries\Large}% Don't overwrite the font setting (i.e. size) of disposition.
+\setkomafont{paragraph}{\normalfont\bfseries\small}
+\addtokomafont{chapterentry}{\normalfont\mdseries\Large}% Don't make chapter entries bold.
+\KOMAoptions{toc=chapterentrydotfill}
+
+%% custom colors 
+\definecolor{SeeSatRed}{HTML}{800000}
+
+%% commands for customizing title page 
+\newcommand{\documenttitle}{System Design}
+\newcommand{\projectname}{Development of a telemetry data link for the ERWIN cubesat}
+\newcommand{\project}{HW/SW Projekt TSL - 0004}
+\newcommand{\version}{1.0}
+\newcommand{\projectdescription}{System Design Document of the TM Chain}
+
+
+%% style header and footer 
+\pagestyle{fancy}
+\fancyfoot[L]{\thepage}
+\fancyfoot[C]{}
+\fancyfoot[R]{ HW/SW Projekt - TSL23}
+\fancyhead{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% literature
+\usepackage[backend=biber, %% Hilfsprogramm "biber" beim Compilieren nutzen (statt "biblatex" oder "bibtex")
+style=numeric, %% Zitierstil (siehe Dokumentation) style=numeric oder style=alphabetic oder authortitle oder authoryear
+%verbose-inote,
+natbib=true, %% Bereitstellen von natbib-kompatiblen Zitierkommandos
+hyperref=true, %% hyperref-Paket verwenden, um Links zu erstellen
+%autocite=footnote, %% Zitate als Fußnote einbinden; Alternativen: plain, inline, footnote, superscript
+]{biblatex}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\addbibresource{literature.bib} %% Einbinden der bib-Datei. Endung .bib unbedingt ergänzen
+
+\setcounter{secnumdepth}{4}
+
+%% begin document 
+
+\begin{document}
+	\rmfamily
+	\input{pages/titlepage}			%% add title page 
+	\input{pages/version_history}		%% add version history 
+	\vspace*{2cm}
+	\tableofcontents			%% add table of contents 
+	\newpage
+	
+	
+	%% start with content of document 
+	\justifying
+	\pagestyle{fancy}
+	\pagenumbering{arabic}
+	
+	%% input chapters 
+	\input{chapters/chapter1}
+	%\input{chapters/chapter2}
+	
+	
+\end{document}

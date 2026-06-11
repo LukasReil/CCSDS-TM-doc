@@ -1,0 +1,87 @@
+\chapter{Standard}
+
+\section{Structure}
+
+\subsection{Project Structure}
+
+\begin{itemize}[parsep=1pt]
+	\item All files relevant for synthesis shall be contained in or in a subfolder of a general \textbf{src} folder, from here on called 'source file'.
+	\item All testbenches shall be contained in or in a subfolder of a general \textbf{tb} folder.
+	\item All TCL scripts shall be contained in or in a subfolder of a general \textbf{scripts} folder.
+	\item All steps of VHDL development shall be conducted using Vivado TCL scripts, where possible.
+\end{itemize}
+
+\subsection{File Structure}
+\label{sec:FileStructure}
+
+\begin{itemize}[parsep=1pt]
+	\item All source files shall contain exactly one entity and its one architecture, except for files describing packages.
+	\item All source files shall have the same name as the contained entity, followed by a \textbf{.vhd} file extension.
+	\item All source files shall have a header following Example \ref{fig:header}.
+\end{itemize}
+\begin{figure}[hbt]
+	\lstinputlisting[language=VHDL]{code/header.vhd}
+	\caption{VHDL File Header Template}
+	\label{fig:header}
+\end{figure}
+
+\section{Naming Convention}
+\label{sec:Naming_Convention}
+
+\begin{itemize}[parsep=1pt]
+	\item All identifiers shall be named in lower snake case, if not specified otherwise.
+	\item All architectures performing clocked logic shall be named behavioral.
+	\item All architectures integrating instances of entities shall be named connectivity.
+	\item All signals shall be named in lower snake case.
+	\item Every signal not contributing to a bus interface (e.g. AXI-Stream) shall have one of the following suffixes, depending on the signal type: 
+	\begin{itemize}
+		\item \textbf{\_i} for entity inputs
+		\item \textbf{\_o} for entity outputs
+		\item \textbf{\_r} for architecture internal signals, that get written to in a clocked process (from here on called 'registers')
+		\item \textbf{\_s} for all other architecture internal signals
+	\end{itemize}
+	\item All constants shall be named in caps lock with underscores to delimit words (EXAMPLE\_CONSTANT).
+	\item All generics shall follow the constants' naming scheme.
+	\item All custom types shall have a \textbf{\_t} suffix.
+	\item All identifiers should be self explanatory.
+\end{itemize}
+\begin{figure}[hbt]
+	\lstinputlisting[language=VHDL]{code/namingConventionExample.vhd}
+	\label{fig:naming}
+	\caption{VHDL Example Entity}
+\end{figure}
+
+\section{Code Formatting}
+
+\begin{itemize}[parsep=1pt]
+	\item Tabs shall be used as indentations.
+	\item All VHDL keywords shall be used in lower case.
+	\item There shall only be one signal definition per line.
+	\item All entity port lists shall be indented as in Example \ref{fig:naming}.
+\end{itemize}
+
+\section{Design Guidelines}
+\label{sec:DesignGuidelines}
+
+\begin{itemize}[parsep=1pt]
+	\item All input and output signals shall be of type \textbf{std\_logic}, \textbf{std\_logic\_vector} or of a custom type.
+	\item For entitys exclusive to a module, which are not exposed to the top-level or a layer's top-level, the above restriction does not apply.
+	\item All maths operations shall be performed, using \textbf{signed} or \textbf{unsigned} types, where possible.
+	\item Math operations should not be performed with \textbf{integers}, except for array indices.
+	\item An architecture that instantiates components shall not describe clocked logic.
+	\item An architecture that instantiates components should only perform minimal sequential logic, like multiplexing.
+	\item All registers shall be initialized with a predefined value.
+	\item There shall be no unnamed constants (so called magic-numbers) in functional code, except for logic level checks (i.e. \textbf{signal\_s = '0'}).
+	\item All entities, architectures and processes shall be explicitly named.
+	\item All named blocks shall be ended with its name explicitly mentioned.
+	\item All code blocks shall be indented once more than their parent blocks.
+	\item Every entity with a behavioral architecture shall define an active-low reset pin, which resets the entity asynchronously.
+\end{itemize}
+
+\begin{figure}[hbt]
+	\lstinputlisting[language=VHDL]{code/exampleProcess.vhd}
+	\label{fig:process}
+	\caption{VHDL Example Process}
+\end{figure}
+
+\newpage
