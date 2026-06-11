@@ -59,8 +59,10 @@ indent=0pt
 \setkomafont{disposition}{\normalfont\bfseries\normalsize}% \normalfont usually
 \setkomafont{chapter}{\normalfont\bfseries\Huge}% Don't overwrite the font setting (i.e. size) of disposition.
 \setkomafont{section}{\normalfont\bfseries\Large}% Don't overwrite the font setting (i.e. size) of disposition.
-\addtokomafont{chapterentry}{\mdseries}% Don't make chapter entries bold.
+\setkomafont{paragraph}{\normalfont\bfseries\small}
+\addtokomafont{chapterentry}{\normalfont\mdseries\Large}% Don't make chapter entries bold.
 \KOMAoptions{toc=chapterentrydotfill}
+
 
 %% custom colors 
 \definecolor{SeeSatRed}{HTML}{800000}
@@ -69,7 +71,7 @@ indent=0pt
 \newcommand{\documenttitle}{Project Plan}
 \newcommand{\projectname}{Development of a telemetry data link for the ERWIN cubesat}
 \newcommand{\project}{HW/SW Projekt TSL - 0004}
-\newcommand{\version}{1.2}
+\newcommand{\version}{1.3}
 \newcommand{\projectdescription}{Document to define the overall structure of the Project}
 
 
