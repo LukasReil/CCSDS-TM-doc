@@ -113,5 +113,16 @@ The virtual channel demultiplexer routes the data to its designated virtual chan
 The data decoder recieves the data octets per virtual channel and buffers them once again to decode the space packet header and to check wether the packet is complete. Idle packets and incomplete packets are discarded. In addition to the data, the first header pointer is provided to recieve packets that span over multiple frames. If there is a missmatch between remaining packet data and first header pointer, the partly receive packet will be discarded as well and the first header pointer defines the start of the next valid packet header. The output interface is a 32Bit AXI 4 stream interface. Because of the 8Bit to 32Bit conversion, it is possible, that the output 32Bit will not be filled completely and up to 3 octets will remain in the data decoder until new data is provided at the sending end.
 
 \section{Test Equipment}
+Test Equipment is equipment not required by any of the system's requirements, but rather necessary for any of the tests described in this plan. It consists of three important components: the external interface, the Data Generator and the Data Comparator.
 
-Test Equipment is equipment not required by any of the system's requirements, but rather necessary for any of the tests described in this plan.
+\subsection{External Interface}
+
+The external interface connects the other components, which are implemented in the programmable logic part of the SoC to the ethernet interface implemented in the processing system. Through this external interface the test data may be injected into the Data Generator and the output of the Data Comparator is being reported to a connected computer. For interfacing between PL and PS the AXI-4 (lite) protocol is used.
+
+\subsection{Data Generator}
+
+The Data Generator allows the Testsystem to input data into the TM chain. Is uses the CCSDS 132 Encoder's native interface and simulates a connected On-Board Computer by providing valid Space Packets to be sent through the TM chain.
+
+\subsection{Data Comparator}
+
+The Data Comparator receives the data output by the CCSDS 132 Decoder and compares it with the delayed output of the Data Generator. If the output of the decoder matches the expected output, this is reported to the external interface. If they don't match, a bitwise difference is reported for debugging purposes.
