@@ -1,0 +1,30 @@
+
+%% create title of document 
+\pagestyle{empty}
+\centering
+\Huge 
+\textbf{\documenttitle} \\
+\vspace*{2cm}
+\Large{for} \\
+\vspace*{1cm}
+\Huge
+\projectname
+
+%% add images 
+\vspace*{\fill}
+\includegraphics[width=0.3\linewidth]{img/seesatLogo}
+\includegraphics[width=0.35\linewidth]{img/DhbwLogo_1}\\[1ex]
+\vspace*{1cm}
+\large
+
+%% table with project information
+\begin{mdframed}[backgroundcolor=black!3]
+	\begin{tabular}{p{4cm} p{10cm}}
+		Project: & \project\\
+		Date: & \today \\
+		Version: & \version\\
+		Description: & \projectdescription
+	\end{tabular}
+\end{mdframed}
+
+\newpage

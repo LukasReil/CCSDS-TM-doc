@@ -1,0 +1,42 @@
+\chapter{Risk Management}
+\label{chp:Risk_Management}
+As part of this project, the team conducted a comprehensive risk analysis. Each of the risks that arose were considered in terms of probability of occurrence, severity of consequences and possible reactions. These risks are also recorded in a separate document, which is to be extended if new risks are identified.
+
+\section{Identified Risks}
+\subsection{Lack of experience regarding Project size}
+One of the identified risks is the teams missing experience working on and managing a project of this scope. It is clear that at some point this can result in several issues caused by miscalculation of time needed for specific tasks and/or mistakes being made during planning phase of the project. While it is necessary to allow for mistakes to be made in order to learn, additional time buffers are needed to prevent a delayed project delivery.
+
+Problems like this are highly likely to occur and can have a catastrophic effect on the projects timeline if not accounted for.
+
+\subsection{Communication with Customer}
+The experience of other projects in association with the customer SeeSat e.v. has shown, that in some cases information that is necessary for the project isn’t always clearly defined and provided. Additionally it is clear, that the persons responsible for this project have other accountabilities and therefore may not always be able to answer in time. Of course this can result in delayed information and have effects on the projects timeline.
+
+To prevent delays regarding the projects timeline, critical Information needs to be requested at least 1, better 2 weeks before it’s needed.
+
+\subsection{Unclear Interfaces to other SeeSat Tech}
+On the space side it is unclear how the developed components shall interface with the OBC or UHF Modem for example. Of course this problem doesn't directly affect the project but may cause issues in the integration state of ERWIN. Due to the team having interests in the success of the Satellite we decided to mark this down as an additional risk. It may be a preliminary solution to keep the previously mentioned interfaces as modular as possible to allow for easy adaption later on.
+
+\subsection{Previous work}
+This project is the continuation of 2 previous projects, whose task it was to develop the the Telementry Front End on the Ground and on Space side. As they were unable to completely finish their projects it is our task to develop one function module for the ground and the space side. It may need more work to get aquainted with the previously developed code that to entirely rework it. This especially opposes a risk as the previously developed space segment does not include all necessary features, so that it maybe needs to be developed from ground up.
+
+If this gets clear after substantial work was put into the group familiarizing itself with the already developed VHDL Code elements, it may threaten the project timeline.
+
+To prevent this from occuring it is necessary to start by checking if the VHDL structure can be extended by the necessary encoding structures.
+
+\subsection{Unknown Hardware}
+Due to the team members not being  familiar with the provided hardware, it is unclear if the structures and interfaces that have been decided on so far are feasible. The team has decided that this is a more minor risk as the majority of the developed structures is more or less hardware independent. If a member however runs into issues regarding this, it is important to report it to the other members as soon as possible to prevent the timeline being affected by this.
+
+\subsection{CCSDSS 131.0-B-5}
+The implementation of the CCSDS 131.0-B-5 imposes several risks:
+
+Firstly especially the decoding actions of Reed Solomon and Convolutional Code are challenging on the mathematical side. It is unclear if any team member is mathematically skilled enough to be able to implement the decoding action in the time necessary. It is rather unlikely that no one will be able to do this at all but the needed time can cause problems. If however no one manages to implement said functionalities this can have catastrophic effects on the projects execution, as other solutions need to be found in that case.
+
+Team Members have also mentioned that the encoding process may need more that one clock cycle per encoded Bit which may cause timing issues before and after the encoding stages. The development team needs to be aware that this may cause issues and should be open to design changes in the affected parts.
+
+\subsection{Knowledge Distribution and Personal Availability}
+As the project scope is quite comprehensive and the team size of 5 members is relatively small compared to it, it is quite difficult that for each field of knowledge there are at least 2 persons able to support others in. This can lead to issues if a team member is not available due i.e. illness or other personal reasons. As long as the non availability is less than a week the consequences of this are rather small, if however a team member is away for more than a week it can have noticeable effects on the projects development timeline.
+
+\subsection{Time allocated by other Projects}
+It is obvious that this project isn't the only project of the team members this semester and the team has decided that the “Studienarbeit” should be prioritized. This causes a Risk for the project as it is not guaranteed that everyone will be able to put in the necessary work at all times.
+
+To prevent this from having substantial effects on the projects outcome it should be considered during the planning stages of the project and when creating an overview of the projects milestones.
