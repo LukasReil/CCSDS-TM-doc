@@ -54,7 +54,7 @@ Too allow for a more flexible test process on the board the tests where grouped 
  
 \paragraph{Test Group 1}
 
-Test Group 1 covers the requirements detailed in Table \ref{tab:req_test_grp_1}. These requirements focus on the general operation of the system, these include testing of interfaces and complete A-B tests by sending data into the system and expecting that the exact data is returned. They also tests if the correct Hardware is used and the configuration of it is as specified.
+Test Group 1 covers the requirements detailed in Table \ref{tab:req_test_grp_1}. These requirements focus on the general operation of the system, these include testing of interfaces and the complete TM Chain tests by sending data into the system and expecting that the exact data is returned. They also tests if the correct Hardware is used and the configuration of it is as specified.
 
 \begin{table}[h!]
 	\begin{tabular}{|c|c|}
@@ -126,17 +126,6 @@ The verification activities aim to cover 100 \% of the system's high level requi
 
 \subsubsection{Verification by Testing}
 
-\paragraph{GND-REQ-3}
-\paragraph{GND-REQ-4}
-\paragraph{GND-REQ-15}
-\paragraph{GND-REQ-16}
-\paragraph{SPC-REQ-2}
-\paragraph{SPC-REQ-3}
-\paragraph{SPC-REQ-13}
-\paragraph{SPC-REQ-16}
-\paragraph{SPC-REQ-17}
-\paragraph{SYS-REQ-1}
-\paragraph{SYS-REQ-2}
 
 
 \subsubsection{Verification by Inspection}
@@ -147,9 +136,9 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		\textbf{Covered Requirement} & \textbf{Imp. Developer} & \textbf{Ver. Developer} & \textbf{PASS/FAIL}\\
 		\hline
-		GND-REQ-11 & HL & MF LR & PASS \\
+		GND-REQ-9 & HL & MF LR & PASS \\
 		\hline
-		GND-REQ-13 & HL & MF LR & PASS \\
+		GND-REQ-10 & HL & MF LR & PASS \\
 		\hline
 		SPC-REQ-23 & HL & MF LR & PASS \\
 		\hline
@@ -180,11 +169,11 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		GND-REQ-1 & MF & HL LR & PASS \\
 		\hline
-		GND-REQ-12 &MF & HL LR & PASS \\
+		GND-REQ-11 &MF & HL LR & PASS \\
 		\hline
-		GND-REQ-15 &MF & HL LR & PASS\\
+		GND-REQ-12 &MF & HL LR & PASS\\
 		\hline
-		GND-REQ-16 &MF & HL LR & PASS\\
+		GND-REQ-22 &MF & HL LR & PASS\\
 		\hline
 		SPS-REQ-22 &MF & HL LR& PASS \\
 		\hline
@@ -198,7 +187,10 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		NFUNC-REQ-2 & MF & HL LR& FAIL\\
 		\hline
-		SPC-REQ-26 & MF & HL LR & FAIL\\
+		SPC-REQ-26 & MF & HL LR & PASS\\
+		
+		\hline
+		GND-REQ-2 & LR & MF HL & PASS \\
 		\hline
 	\end{tabular}
 	\caption{Requirements covered by Reed Solomon}
@@ -212,11 +204,11 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		\textbf{Covered Requirement} & \textbf{Imp. Developer} & \textbf{Ver. Developer} & \textbf{PASS/FAIL}\\
 		\hline
-		GND-REQ-2 & LR & MF HL & PASS \\
+		GND-REQ-5 & LR & MF HL & PASS \\
 		\hline
-		GND-REQ-4 & LR & MF HL & PASS \\
+		GND-REQ-7 & LR & MF HL & PASS \\
 		\hline
-		GND-REQ-6 & LR & MF HL & PASS \\
+		GND-REQ-8 & LR & MF HL & PASS \\
 		\hline
 		SPS-REQ-5 & LR & MF HL & PASS \\
 		\hline
@@ -233,6 +225,9 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		NFUNC-REQ-2 & LR & MF HL & PASS \\
 		\hline
 		SPC-REQ-26 & LR & MF HL & PASS \\
+		\hline
+		GND-REQ-2 & LR & MF HL & PASS \\
+		
 		\hline
 	\end{tabular}
 	\caption{Requirements covered by Convolutional Code}
