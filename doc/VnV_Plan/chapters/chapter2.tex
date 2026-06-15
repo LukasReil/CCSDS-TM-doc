@@ -50,27 +50,32 @@ No strict guidelines are given for the development of the end items. As per the 
 The verification activities aim to cover 100 \% of the system's high level requirements, either by defining test cases to be tested in a testing campaign or, where tests are not applicable / possible, by inspection in a code walkthrough.
 
 \subsubsection{Verification by Testing}
-
+Too allow for a more flexible test process on the board the tests where grouped into two categories, the first one is the test that only requires a AXI-Interface for writing and reading from the system, this group of tests shall be called \textit{Test Group 1} in the following. The second test group from now on called \textit{Test Group 2} requires multiple AXI-Interfaces to by synthesized into the system since these test multiple Virtual channels and multiple master channels.
+ 
 \paragraph{Test Group 1}
 
-Test Group 1 covers the requirements detailed in Table \ref{tab:req_test_grp_1}.
+Test Group 1 covers the requirements detailed in Table \ref{tab:req_test_grp_1}. These requirements focus on the general operation of the system, these include testing of interfaces and the complete TM Chain tests by sending data into the system and expecting that the exact data is returned. They also tests if the correct Hardware is used and the configuration of it is as specified.
 
 \begin{table}[h!]
 	\begin{tabular}{|c|c|}
 		\hline
 		\textbf{Covered Requirement} & \textbf{Imp. Developer} \\
 		\hline
-		GND-REQ-16 & \\
+		GND-REQ-3 & \\
 		\hline
-		GND-REQ-17 & \\
+		GND-REQ-4 & \\
 		\hline
 		GND-REQ-5 & \\
 		\hline
-		GND-REQ-6 & \\
+		GND-REQ-13 & \\
+		\hline
+		GND-REQ-14 & \\
 		\hline
 		SPC-REQ-2 & \\
 		\hline
 		SPC-REQ-3 & \\
+		\hline
+		SPC-REQ-6 & \\
 		\hline
 		SYS-REQ-1 & \\
 		\hline
@@ -83,14 +88,14 @@ Test Group 1 covers the requirements detailed in Table \ref{tab:req_test_grp_1}.
 
 \paragraph{Test Group 2}
 
-Test Group 2 covers the requirements detailed in Table \ref{tab:req_test_grp_2}.
+Test Group 2 covers the requirements detailed in Table \ref{tab:req_test_grp_2}. These tests define usage of multi master and multi virtual channel systems, there fore needing different software to stimulate the system accordingly. They also include some edge cases that require extra attention. This multi interface setup is quite similar to the decoder interfaces elaborated in \autoref{fig:132_decoder}.
 
 \begin{table}[h!]
 	\begin{tabular}{|c|c|}
 		\hline
 		\textbf{Covered Requirement} & \textbf{Imp. Developer} \\
 		\hline
-		GND-REQ-18 & \\
+		GND-REQ-15 & \\
 		\hline
 		SPC-REQ-13 & \\
 		\hline
@@ -121,17 +126,6 @@ The verification activities aim to cover 100 \% of the system's high level requi
 
 \subsubsection{Verification by Testing}
 
-\paragraph{GND-REQ-3}
-\paragraph{GND-REQ-4}
-\paragraph{GND-REQ-15}
-\paragraph{GND-REQ-16}
-\paragraph{SPC-REQ-2}
-\paragraph{SPC-REQ-3}
-\paragraph{SPC-REQ-13}
-\paragraph{SPC-REQ-16}
-\paragraph{SPC-REQ-17}
-\paragraph{SYS-REQ-1}
-\paragraph{SYS-REQ-2}
 
 
 \subsubsection{Verification by Inspection}
@@ -142,9 +136,9 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		\textbf{Covered Requirement} & \textbf{Imp. Developer} & \textbf{Ver. Developer} & \textbf{PASS/FAIL}\\
 		\hline
-		GND-REQ-11 & HL & MF LR & PASS \\
+		GND-REQ-9 & HL & MF LR & PASS \\
 		\hline
-		GND-REQ-13 & HL & MF LR & PASS \\
+		GND-REQ-10 & HL & MF LR & PASS \\
 		\hline
 		SPC-REQ-23 & HL & MF LR & PASS \\
 		\hline
@@ -175,11 +169,11 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		GND-REQ-1 & MF & HL LR & PASS \\
 		\hline
-		GND-REQ-12 &MF & HL LR & PASS \\
+		GND-REQ-11 &MF & HL LR & PASS \\
 		\hline
-		GND-REQ-15 &MF & HL LR & PASS\\
+		GND-REQ-12 &MF & HL LR & PASS\\
 		\hline
-		GND-REQ-16 &MF & HL LR & PASS\\
+		GND-REQ-22 &MF & HL LR & PASS\\
 		\hline
 		SPS-REQ-22 &MF & HL LR& PASS \\
 		\hline
@@ -193,7 +187,10 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		NFUNC-REQ-2 & MF & HL LR& FAIL\\
 		\hline
-		SPC-REQ-26 & MF & HL LR & FAIL\\
+		SPC-REQ-26 & MF & HL LR & PASS\\
+		
+		\hline
+		GND-REQ-2 & LR & MF HL & PASS \\
 		\hline
 	\end{tabular}
 	\caption{Requirements covered by Reed Solomon}
@@ -207,11 +204,11 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		\hline
 		\textbf{Covered Requirement} & \textbf{Imp. Developer} & \textbf{Ver. Developer} & \textbf{PASS/FAIL}\\
 		\hline
-		GND-REQ-2 & LR & MF HL & PASS \\
+		GND-REQ-5 & LR & MF HL & PASS \\
 		\hline
-		GND-REQ-4 & LR & MF HL & PASS \\
+		GND-REQ-7 & LR & MF HL & PASS \\
 		\hline
-		GND-REQ-6 & LR & MF HL & PASS \\
+		GND-REQ-8 & LR & MF HL & PASS \\
 		\hline
 		SPS-REQ-5 & LR & MF HL & PASS \\
 		\hline
@@ -228,6 +225,9 @@ The verification activities aim to cover 100 \% of the system's high level requi
 		NFUNC-REQ-2 & LR & MF HL & PASS \\
 		\hline
 		SPC-REQ-26 & LR & MF HL & PASS \\
+		\hline
+		GND-REQ-2 & LR & MF HL & PASS \\
+		
 		\hline
 	\end{tabular}
 	\caption{Requirements covered by Convolutional Code}
@@ -262,13 +262,131 @@ This requires the entire processing chain to be fully integrated, with a system 
 	\label{fig:testsystem}
 \end{figure}
 
-\section{System Validation}
-\subsection{Test Definition}
+\section{System Validation: Test Group 1}
+\subsection{Test Definition: Test Group 1}
 
 The overall system is validated by writing predefined data into the CCSDS 132 Encoder and observing the CCSDS 132 Decoder's output. If the data generated by the Data Generator matches the delayed output of the Decoder, the Data Comparator will indicate this to the user as success. If the data does not match, a failure is reported instead.
 
+In general to test Test Group 1 the tester is required to use the following Software: AMD Vitis™ Unified Software Plattform, Python 3.x, Wireshark and Tasks Manager. This test amuses that the tester uses a Windows 11 based system. The test setup shall consist of the device under test, this should be a PYNQ Z2 board or equivalent. Adding to that a Host-PC shall be connected to the DUT using both a USB type A micro and an Ethernet cable. The Host-PCs IP-interface shall be configured using the parameters defined in \autoref{tab:TestGroup1_IP_params}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Parameter} & \textbf{Value}\\
+		\hline
+		IP-Address & 192.168.1.1 \\
+		\hline
+		Subnetmask & 255.255.255.0 \\
+		\hline
+		Standard gateway & N/A \\
+		\hline
+
+	\end{tabular}
+	\caption{Parameters for the IP-interface of the Host-PC}
+	\label{tab:TestGroup1_IP_params}
+\end{table}
+
+The test software written for the embedded CPU shall be uploaded using the Vitis tool chain, it might be beneficial to use the build in debugger for some values. Additionally the python script for the Host-PC shall be launched to stimulate the DUT and to read the values back. 
+
+\begin{table}[H]
+	\begin{tabular}{|p{2.7cm}|p{6cm}|p{6cm}|p{1cm}|}
+		\hline
+		\textbf{Req} & \textbf{Step} & \textbf{Expected Result} & \textbf{P/F}\\
+		\hline
+		GND-REQ-5 SPS-REQ-6 & Evaluate the Board used for testing and check if its a PYNQ Z2 board & Its a PYNQ Z2 board& \\
+		\hline
+		SPC-REQ-3 & Start the test system on both the Host-PC and the embedded CPU & no errors or exceptions are printed and the system is shows the data generated and the that is data received & \\
+		\hline
+		GND-REQ-3 SPS-REQ-2 & Open the program Wireshark, select the corresponding ethernet interface & there are TCP Packets send from and to the IP-Address 192.168.1.10 & \\
+		\hline
+		SPC-REQ-2 & Open Task Manager and check the network tab & the network usage of the IP-Interface used for testing $\geq  4$ Mbit/s \footnote{There should not be any other traffic on the network during this test} & \\
+		\hline
+		GND-REQ-4 GND-REQ-13 SYS-REQ-1 SYS-REQ-2 & Analyise the data send into the system and compare with the data recieved & These should have the same byte order and the same data& \\
+		\hline
+		
+	\end{tabular}
+	\caption{Test definition for Test Group 1}
+	\label{tab:TestGroup1_testdef}
+\end{table}
+
 \subsection{Test Result}
 
-\section{Test B}
-\subsection{Test Definition}
+\begin{table}[H]
+	\begin{tabular}{|p{2.7cm}|p{12.4cm}|p{1cm}|}
+		\hline
+		\textbf{Req} & \textbf{Note} & \textbf{P/F}\\
+		\hline
+		GND-REQ-5 SPS-REQ-6 & & \\
+		\hline
+		SPC-REQ-3 &  & \\
+		\hline
+		GND-REQ-3 SPS-REQ-2 &  & \\
+		\hline
+		SPC-REQ-2 &  & \\
+		\hline
+		GND-REQ-4 GND-REQ-13 SYS-REQ-1 SYS-REQ-2 &  & \\
+		\hline
+		
+	\end{tabular}
+	\caption{Test results for Test Group 1}
+	\label{tab:TestGroup1_testresults}
+\end{table}
+
+
+\section{System Validation: Test Group 2}
+\subsection{Test Definition: Test Group 2}
+To test different Virtual and master channels a quite similar test setup to the first test group may be used, but instad of using an Hardware Synthises that exposes only one Virtual channel one shall be used where multiple VC and MC are exposed. Addtionaly a new embedded software is requiered to stimulate multiple channels. These shall output data to different ports to the Host-PC. Thus also a modifiered version of the test system written in python is requiered.
+
+The test system will then stimulate multiple VC and MCs and therefore allow for validation of these MCs VCs.
+
+\begin{table}[H]
+	\begin{tabular}{|p{2.7cm}|p{6cm}|p{6cm}|p{1cm}|}
+		\hline
+		\textbf{Req} & \textbf{Step} & \textbf{Expected Result} & \textbf{P/F}\\
+		\hline
+		GND-REQ-15 SPC-REQ-16 SPC-REQ-17 & Stimulate difrend Virtual channels using the test system & the data stimulated matches the data recieved with their VC IDs& \\
+		\hline
+		GND-REQ-15 SPC-REQ-18 & Stimulate difrend master channels using the test system & the data stimulated matches the data recieved with their MC IDs& \\
+		\hline
+		SPC-REQ-13 & Stimulate using space packets of length 7 Octet & Expect that this now sub dived space packets are recieved and repacked correctly & \\
+		\hline
+		SPC-REQ-13 & Stimulate using space packets of length 53 Octet & Expect that this now sub dived space packets are recieved and repacked correctly & \\
+		\hline
+		SPC-REQ-13 & Stimulate using space packets of length 223 Octet & Expect that this now sub dived space packets are recieved and repacked correctly & \\
+		\hline
+		SPC-REQ-13 & Stimulate using space packets of length 251 Octet & Expect that this now sub dived space packets are recieved and repacked correctly & \\
+		\hline
+		
+		
+	\end{tabular}
+	\caption{Test definition for Test Group 2}
+	\label{tab:TestGroup2_testdef}
+\end{table} 
 \subsection{Test Result}
+
+
+\begin{table}[H]
+	\begin{tabular}{|p{2.7cm}|p{12.4cm}|p{1cm}|}
+		\hline
+		\textbf{Req} & \textbf{Note} & \textbf{P/F}\\
+		\hline
+		GND-REQ-15 SPC-REQ-16 SPC-REQ-17 & & \\
+		\hline
+		GND-REQ-15 SPC-REQ-18 &  & \\
+		\hline
+		GND-REQ-3 SPS-REQ-2 &  & \\
+		\hline
+		SPC-REQ-13 &  & \\
+		\hline
+		SPC-REQ-13 &  & \\
+		\hline
+		SPC-REQ-13 &  & \\
+		\hline
+		SPC-REQ-13 &  & \\
+		\hline
+		
+	\end{tabular}
+	\caption{Test results for Test Group 2}
+	\label{tab:TestGroup2_testresults}
+\end{table}
