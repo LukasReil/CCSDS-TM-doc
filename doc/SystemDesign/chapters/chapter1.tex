@@ -49,6 +49,11 @@ The system, as pictured in figure \ref{fig:systemArch} aims to implement the TM 
 
 \section{CCSDS 132 Encoder}
 \label{sec:ccsds_132_encoder}
+
+The CCSDS 132 encoder forms part of the space component of CCSDS 132.0-B-3. In its current configuration, it provides higher system levels with the packet service, as described in CCSDS 132.0-B-3. The standard distinguishes between physical, master, and virtual channels. Each CCSDS-132 implementation provides one physical channel, which describes the hardware transmission to the lower layers. The master and virtual channels are for organising the internal data structure and do not affect how data is transmitted, except for the virtual and master channel IDs inside the TM Transfer Frame header, over the physical channel. According to this definition, the CCSDS 132 encoder must prioritise and multiplex incoming virtual and master channel combinations in order to enable continuous data transmission. Data to be transmitted by the CCSDS 132 encoder is wrapped in a TM transfer frame, which encapsulates the data and provides the decoding side of CCSDS 132 with the necessary information to send the frame to the correct master and virtual channels.
+In the current implementation, a TM transfer frame is 2,046 bytes in size. This includes the header and any trailers. When no trailer or secondary header is present, the data field is 2,040 octets in size. Since each TM transfer frame can only carry data from one virtual and master channel combination, each combination requires its own full-size buffer. The advantage of multiple buffers is that different virtual and master channels can send data to the CCSDS 132 encoder without being bottlenecked by other channels. Once a TM transfer frame is full, the data can be sent via the physical channel.
+\autoref{fig:132Encoder} shows a visualisation of the architecture.
+
 \section{CCSDS 131 Encoder}
 
 In general, the CCSDS 131 Encoder can be subdivided into four components defined by CCSDS 131.0-B-5. The first of these is the Reed-Solomon encoder, which is designed to implement a (223, 255)-RS encoder. This means that upto 16-byte errors can be corrected by the code generated here. The R/S encoder reads a one-byte-wide data stream from higher layers and sends a one-byte-wide data stream to lower layers of the CCSDS 131.0-B-5.
