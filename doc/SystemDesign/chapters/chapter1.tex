@@ -54,6 +54,13 @@ The CCSDS 132 encoder forms part of the space component of CCSDS 132.0-B-3. In i
 In the current implementation, a TM transfer frame is 2,046 bytes in size. This includes the header and any trailers. When no trailer or secondary header is present, the data field is 2,040 octets in size. Since each TM transfer frame can only carry data from one virtual and master channel combination, each combination requires its own full-size buffer. The advantage of multiple buffers is that different virtual and master channels can send data to the CCSDS 132 encoder without being bottlenecked by other channels. Once a TM transfer frame is full, the data can be sent via the physical channel.
 \autoref{fig:132Encoder} shows a visualisation of the architecture.
 
+ \begin{figure}[hbt]
+ 	\centering
+ 	\includegraphics[width=\linewidth]{img/132_encoder.drawio.png}
+ 	\caption{Architecture of the 132 Encoder}
+ 	\label{fig:132Encoder}
+ \end{figure}
+
 \section{CCSDS 131 Encoder}
 
 In general, the CCSDS 131 Encoder can be subdivided into four components defined by CCSDS 131.0-B-5. The first of these is the Reed-Solomon encoder, which is designed to implement a (223, 255)-RS encoder. This means that upto 16-byte errors can be corrected by the code generated here. The R/S encoder reads a one-byte-wide data stream from higher layers and sends a one-byte-wide data stream to lower layers of the CCSDS 131.0-B-5.
